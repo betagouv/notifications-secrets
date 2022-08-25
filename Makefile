@@ -1,2 +1,2 @@
 reencrypt:
-	PASSWORD_STORE_DIR=$(shell pwd) pass init
+	env PASSWORD_STORE_DIR=. $(shell cat .gpg-id | xargs pass init)
