@@ -1,0 +1,3 @@
+#!/bin/sh
+
+PASSWORD_STORE_DIR=./secrets pass "$@"

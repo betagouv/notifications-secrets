@@ -30,6 +30,16 @@ jeanne@Machine-de-Jeanne $ gpg --import cle-publique-romain.txt
 
 Maintenant Jeanne peut encoder à destination de Jean.
 
+### 3. (optionel) Vérifier la clé
+
+Pour éviter un message de confirmation à chaque fois qu'on encrypte
+quelque chose il est préférable de vérifier les clés de ses collègues
+en leur accordant une pleine confiance :
+
+```sh
+gpg --lsign-key 3782CBB60147010B330523DD26FBCC7836BF353A
+```
+
 ### 2. Rajouter la clé au trousseau
 
 Exemple :
@@ -37,6 +47,8 @@ Exemple :
 ```sh
 $ cat 3782CBB60147010B330523DD26FBCC7836BF353A >> secrets/.gpg-id
 ```
+
+### 3. Réencrypter les secrets
 
 Une fois que le trousseau est à jour, il faut réencoder les secrets
 pour inclure la nouvelle personne :
@@ -49,8 +61,5 @@ Voir le `Makefile` pour la commande précise.
 
 ### Départ de l'équipe
 
-Pour un départ dans l'équipe il faut faire exactement pareil que pour
-l'arrivée mais en enlevant la clé du trousseau.
-
-L'API complète est consultable dans le manuel : `man pass`,
-disponible aussi sur https://git.zx2c4.com/password-store/about/.
+Pour un départ de l'équipe il faut enlever la clé correspondante du
+trousseau et réencrypter.

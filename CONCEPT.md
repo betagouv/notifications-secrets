@@ -77,7 +77,14 @@ Exemple :
 $ PASSWORD_STORE_DIR=./secrets pass ls
 ```
 
-Une fois ce détail noté l'api de `pass` est très simple :
+Pour gagner du temps un exécutable local est fourni qui fait
+l'indirection automatiquement :
+
+```sh
+$ ./pass ls
+```
+
+Enfin, l'API de `pass` est très simple :
 
 | opération            | commande          | exemple                                  |
 |----------------------|-------------------|------------------------------------------|
@@ -89,3 +96,6 @@ Une fois ce détail noté l'api de `pass` est très simple :
 | insertion            | insert `chemin`   | `pass insert admin/staging/sentry.gpg`   |
 | création             | generate `chemin` | `pass generate admin/staging/sentry.gpg` |
 | suppression          | rm `chemin`       | `pass rm admin/staging/sentry.gpg`       |
+
+L'API complète est consultable dans le manuel : `man pass`, disponible
+aussi sur https://git.zx2c4.com/password-store/about/.
